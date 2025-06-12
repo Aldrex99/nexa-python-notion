@@ -1,0 +1,74 @@
+{
+  "object": "database",
+  "id": "2102cdbb-4757-8110-a76f-cb2284e29df3",
+  "cover": null,
+  "icon": null,
+  "created_time": "2025-06-12T07:23:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "2f589f48-fe35-4317-8f84-345e601d4a44"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "2f589f48-fe35-4317-8f84-345e601d4a44"
+  },
+  "last_edited_time": "2025-06-12T07:23:00.000Z",
+  "title": [
+    {
+      "type": "text",
+      "text": {
+        "content": "Invoices",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "Invoices",
+      "href": null
+    }
+  ],
+  "description": [],
+  "is_inline": true,
+  "properties": {
+    "Mois": {
+      "id": "Jh%5EE",
+      "name": "Mois",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Invoice Number": {
+      "id": "NoqM",
+      "name": "Invoice Number",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Total Amount": {
+      "id": "xFzN",
+      "name": "Total Amount",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Client": {
+      "id": "title",
+      "name": "Client",
+      "type": "title",
+      "title": {}
+    }
+  },
+  "parent": {
+    "type": "page_id",
+    "page_id": "2102cdbb-4757-8038-8bbe-e241c31ad191"
+  },
+  "url": "https://www.notion.so/2102cdbb47578110a76fcb2284e29df3",
+  "public_url": "https://tin-cloudberry-7b3.notion.site/2102cdbb47578110a76fcb2284e29df3",
+  "archived": false,
+  "in_trash": false,
+  "request_id": "74db6662-08cc-431b-be12-0d540d33310c"
+}

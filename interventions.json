@@ -1,0 +1,486 @@
+{
+  "object": "database",
+  "id": "2102cdbb-4757-816a-a73e-d3dc1dc16b36",
+  "cover": null,
+  "icon": {
+    "type": "external",
+    "external": {
+      "url": "https://www.notion.so/icons/checkmark_green.svg"
+    }
+  },
+  "created_time": "2025-06-12T07:23:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "2f589f48-fe35-4317-8f84-345e601d4a44"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "2f589f48-fe35-4317-8f84-345e601d4a44"
+  },
+  "last_edited_time": "2025-06-12T07:37:00.000Z",
+  "title": [
+    {
+      "type": "text",
+      "text": {
+        "content": "Suivi des tâches",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "Suivi des tâches",
+      "href": null
+    }
+  ],
+  "description": [
+    {
+      "type": "text",
+      "text": {
+        "content": "Restez organisé·e avec vos tâches, à votre façon.",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "Restez organisé·e avec vos tâches, à votre façon.",
+      "href": null
+    }
+  ],
+  "is_inline": true,
+  "properties": {
+    "Ville": {
+      "id": "%3Aso%7C",
+      "name": "Ville",
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "8a6b5b53-1dbd-4449-8c89-419f54def5a0",
+            "name": "EPITECH Digital",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "5381ceab-6724-46c2-932d-839395c80710",
+            "name": "NEXA Digital School",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "64c5008c-0326-4d4f-9e11-770b16d786c8",
+            "name": "ENSIIE",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "e4fcc17a-ab67-43a0-a119-87b3f79e85fb",
+            "name": "ESIEE",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "f19b6eb9-8259-4e8b-bf70-29e154dfac65",
+            "name": "Le Kremlin-Bicêtre",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "174c7d92-91c1-4e88-8ece-42edf5f92c89",
+            "name": "Evry",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "d19a5c6d-abb8-42bd-9f83-de381e30fd50",
+            "name": "Paris",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "1e5efd24-9bf4-4767-91c4-5724426627d7",
+            "name": "Noisy-le-Grand",
+            "color": "pink",
+            "description": null
+          }
+        ]
+      }
+    }
+  },
+  "Niveau d’effort": {
+    "id": "%3BoM%7C",
+    "name": "Niveau d’effort",
+    "description": "Combien de temps cela va-t-il prendre ?",
+    "type": "select",
+    "select": {
+      "options": [
+        {
+          "id": "63decdf4-f0e6-4848-a1bf-561e68897381",
+          "name": "Faible",
+          "color": "green",
+          "description": null
+        },
+        {
+          "id": "b537cf6c-8cb8-4c3f-9a10-132472389014",
+          "name": "Moyenne",
+          "color": "yellow",
+          "description": null
+        },
+        {
+          "id": "1993545d-653e-48d0-9496-cfc698410019",
+          "name": "Élevé",
+          "color": "red",
+          "description": null
+        }
+      ]
+    }
+  },
+  "Classe": {
+    "id": "%3D%3C%60%40",
+    "name": "Classe",
+    "type": "select",
+    "select": {
+      "options": [
+        {
+          "id": "8a6b5b53-1dbd-4449-8c89-419f54def5a0",
+          "name": "EPITECH Digital",
+          "color": "purple",
+          "description": null
+        },
+        {
+          "id": "5381ceab-6724-46c2-932d-839395c80710",
+          "name": "NEXA Digital School",
+          "color": "brown",
+          "description": null
+        },
+        {
+          "id": "f7b3a34a-b572-41c4-91c6-30e2937b691b",
+          "name": "BTS SIO",
+          "color": "red",
+          "description": null
+        },
+        {
+          "id": "76c26267-9e9f-4e8c-8631-44729b1c4de4",
+          "name": "M2 EDWEB",
+          "color": "pink",
+          "description": null
+        },
+        {
+          "id": "74f8f012-7bad-4d07-996e-6fe16dfe9fd7",
+          "name": "M2 ESI",
+          "color": "green",
+          "description": null
+        },
+        {
+          "id": "b4f0bb80-bba0-4b83-886d-33e206db9eb6",
+          "name": "M1",
+          "color": "gray",
+          "description": null
+        },
+        {
+          "id": "6909ef26-d42f-4677-9602-b3789e59a4b1",
+          "name": "L3",
+          "color": "blue",
+          "description": null
+        },
+        {
+          "id": "1b1bcbf5-de31-41b5-8b09-f744c41741f1",
+          "name": "M1 Maths",
+          "color": "orange",
+          "description": null
+        },
+        {
+          "id": "926f38ae-5e57-4c95-a743-fdaca0551e3e",
+          "name": "M1 EDWEB",
+          "color": "default",
+          "description": null
+        }
+      ]
+    }
+  },
+  "Date de fin": {
+    "id": "BC%7BD",
+    "name": "Date de fin",
+    "type": "date",
+    "date": {}
+  },
+  "Total": {
+    "id": "E%5DAO",
+    "name": "Total",
+    "type": "formula",
+    "formula": {
+      "expression": "{{notion:block_property:JjGy:00000000-0000-0000-0000-000000000000:36ecff02-3ea9-45e6-a160-9c4d034de0e9}}*{{notion:block_property:%60_Pc:00000000-0000-0000-0000-000000000000:36ecff02-3ea9-45e6-a160-9c4d034de0e9}}"
+    },
+    "Ecole": {
+      "id": "GDGQ",
+      "name": "Ecole",
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "8a6b5b53-1dbd-4449-8c89-419f54def5a0",
+            "name": "EPITECH Digital",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "5381ceab-6724-46c2-932d-839395c80710",
+            "name": "NEXA Digital School",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "64c5008c-0326-4d4f-9e11-770b16d786c8",
+            "name": "ENSIIE",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "e4fcc17a-ab67-43a0-a119-87b3f79e85fb",
+            "name": "ESIEE",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "dfbc5b84-5963-4a7b-a956-031282c6f02e",
+            "name": "ECE",
+            "color": "red",
+            "description": null
+          }
+        ]
+      }
+    }
+  },
+  "Description": {
+    "id": "J%3AF%5B",
+    "name": "Description",
+    "type": "rich_text",
+    "rich_text": {}
+  },
+  "Nombre heures": {
+    "id": "JjGy",
+    "name": "Nombre heures",
+    "type": "number",
+    "number": {
+      "format": "number"
+    }
+  },
+  "Type de tâche": {
+    "id": "L~%5D%3E",
+    "name": "Type de tâche",
+    "type": "select",
+    "select": {
+      "options": [
+        {
+          "id": "d6d80cdc-2ace-4648-91f9-0659634fdb28",
+          "name": "Cours à préparer",
+          "color": "yellow",
+          "description": null
+        },
+        {
+          "id": "b5f73abd-0785-42dd-a3ae-7bbadbfb8089",
+          "name": "Cours à présenter",
+          "color": "default",
+          "description": null
+        },
+        {
+          "id": "e692647e-d5dd-444e-a582-b43f159c6bcf",
+          "name": "Cours présenté",
+          "color": "green",
+          "description": null
+        }
+      ]
+    }
+  },
+  "En souffrance": {
+    "id": "Ox~q",
+    "name": "En souffrance",
+    "description": "Signale les tâches qui ont dépassé leur date d’échéance",
+    "type": "formula",
+    "formula": {
+      "expression": "if({{notion:block_property:hjFQ:00000000-0000-0000-0000-000000000000:36ecff02-3ea9-45e6-a160-9c4d034de0e9}} < now(), '⏰ Past Due', '')"
+    }
+  },
+  "Personne assignée": {
+    "id": "Qv%5Dw",
+    "name": "Personne assignée",
+    "description": "Qui est responsable du projet ?",
+    "type": "people",
+    "people": {}
+  },
+  "État": {
+    "id": "S%5E%3Ed",
+    "name": "État",
+    "type": "status",
+    "status": {
+      "options": [
+        {
+          "id": "2882bc4e-da9f-4eb2-a695-c9b64a3c9899",
+          "name": "Pas commencé",
+          "color": "default",
+          "description": null
+        },
+        {
+          "id": "59a26032-d447-44ed-9b17-7c9dec436fd3",
+          "name": "En cours",
+          "color": "blue",
+          "description": null
+        },
+        {
+          "id": "2150867b-0a8d-4a4e-9135-850e487ebad7",
+          "name": "Terminé",
+          "color": "green",
+          "description": null
+        }
+      ],
+      "groups": [
+        {
+          "id": "94a7f3e8-9c67-4689-977b-266bad4c92d9",
+          "name": "To-do",
+          "color": "gray",
+          "option_ids": [
+            "2882bc4e-da9f-4eb2-a695-c9b64a3c9899"
+          ]
+        },
+        {
+          "id": "fd9de969-3830-4e5d-b4ca-51ec4d98a801",
+          "name": "In progress",
+          "color": "blue",
+          "option_ids": [
+            "59a26032-d447-44ed-9b17-7c9dec436fd3"
+          ]
+        },
+        {
+          "id": "bd5d4001-3eae-4fa0-bff3-b43b76e76557",
+          "name": "Complete",
+          "color": "green",
+          "option_ids": [
+            "2150867b-0a8d-4a4e-9135-850e487ebad7"
+          ]
+        }
+      ]
+    }
+  },
+  "Facturé": {
+    "id": "UrM_",
+    "name": "Facturé",
+    "type": "checkbox",
+    "checkbox": {}
+  },
+  "ID de facture": {
+    "id": "XMVJ",
+    "name": "ID de facture",
+    "type": "select",
+    "select": {
+      "options": []
+    }
+  },
+  "Priorité": {
+    "id": "%5EYGk",
+    "name": "Priorité",
+    "type": "select",
+    "select": {
+      "options": [
+        {
+          "id": "31c883a7-33f8-470e-9176-8040a40106a4",
+          "name": "Élevée",
+          "color": "red",
+          "description": null
+        },
+        {
+          "id": "56939683-8650-4d96-91e1-0a9d1d1f4a13",
+          "name": "Moyenne",
+          "color": "yellow",
+          "description": null
+        },
+        {
+          "id": "f16c66a7-64d9-4f1a-8eab-a965d86c01e6",
+          "name": "Faible",
+          "color": "green",
+          "description": null
+        }
+      ]
+    }
+  },
+  "Tarif horaire": {
+    "id": "%60_Pc",
+    "name": "Tarif horaire",
+    "type": "number",
+    "number": {
+      "format": "number"
+    }
+  },
+  "A facturer": {
+    "id": "dF%3AB",
+    "name": "A facturer",
+    "type": "select",
+    "select": {
+      "options": [
+        {
+          "id": "17e6b388-ef96-4207-8404-78a6c92cbe26",
+          "name": "Yes",
+          "color": "green",
+          "description": null
+        },
+        {
+          "id": "941a32d3-abed-4a61-a63e-4cf323e13e92",
+          "name": "No",
+          "color": "pink",
+          "description": null
+        },
+        {
+          "id": "d67cf60e-083f-48a0-a165-0a31c7710868",
+          "name": "true",
+          "color": "yellow",
+          "description": null
+        },
+        {
+          "id": "e2ed5c32-9f2f-4c45-a567-486e828fa690",
+          "name": "false",
+          "color": "brown",
+          "description": null
+        }
+      ]
+    }
+  },
+  "Date de début": {
+    "id": "hjFQ",
+    "name": "Date de début",
+    "type": "date",
+    "date": {}
+  },
+  "Contenu de cours": {
+    "id": "rDxR",
+    "name": "Contenu de cours",
+    "type": "relation",
+    "relation": {
+      "database_id": "20f2cdbb-4757-818c-a91e-c93877b2d981",
+      "type": "single_property",
+      "single_property": {}
+    }
+  },
+  "Cours": {
+    "id": "title",
+    "name": "Cours",
+    "type": "title",
+    "title": {}
+  },
+  "parent": {
+    "type": "page_id",
+    "page_id": "2102cdbb-4757-8038-8bbe-e241c31ad191"
+  },
+  "url": "https://www.notion.so/2102cdbb4757816aa73ed3dc1dc16b36",
+  "public_url": "https://tin-cloudberry-7b3.notion.site/2102cdbb4757816aa73ed3dc1dc16b36",
+  "archived": false,
+  "in_trash": false,
+  "request_id": "3ee4fbc6-3e21-4cd0-916e-b1411dcc3974"
+}
