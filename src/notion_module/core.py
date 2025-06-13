@@ -42,10 +42,20 @@ def query_unbilled_entries(date_start: str, date_end: str, already_factured: boo
                     }
                 },
                 {
-                    "property": "Date de fin",
-                    "date": {
-                        "on_or_before": date_end.strftime("%Y-%m-%d")
-                    }
+                    "or": [
+                        {
+                            "property": "Date de fin",
+                            "date": {
+                                "on_or_before": date_end.strftime("%Y-%m-%d")
+                            }
+                        },
+                        {
+                            "property": "Date de fin",
+                            "date": {
+                                "is_empty": True
+                            }
+                        },
+                    ],
                 },
                 {
                     "property": "Facturé",
@@ -74,10 +84,20 @@ def query_unbilled_entries(date_start: str, date_end: str, already_factured: boo
                         }
                     },
                     {
-                        "property": "Date de fin",
-                        "date": {
-                            "on_or_before": date_end.strftime("%Y-%m-%d")
-                        }
+                        "or": [
+                            {
+                                "property": "Date de fin",
+                                "date": {
+                                    "on_or_before": date_end.strftime("%Y-%m-%d")
+                                }
+                            },
+                            {
+                                "property": "Date de fin",
+                                "date": {
+                                    "is_empty": True
+                                }
+                            },
+                        ],
                     },
                 ]
             },
@@ -179,3 +199,22 @@ def generate_invoice_blocks(interventions: list, client: str, mois: str):
     })
 
     return children
+
+def mark_as_billed(pages):
+    for page in pages:
+        page_id = page["id"]
+
+        update_payload = {
+            "properties": {
+                "Facturé": {
+                    "checkbox": True
+                }
+            }
+        }
+
+        response = requests.patch(
+            f"https://api.notion.com/v1/pages/{page_id}",
+            headers=HEADERS,
+            json=update_payload
+        )
+        response.raise_for_status()
