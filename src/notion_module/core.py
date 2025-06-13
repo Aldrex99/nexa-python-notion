@@ -42,20 +42,10 @@ def query_unbilled_entries(date_start: str, date_end: str, already_factured: boo
                     }
                 },
                 {
-                    "or": [
-                        {
-                            "property": "Date de fin",
-                            "date": {
-                                "on_or_before": date_end.strftime("%Y-%m-%d")
-                            }
-                        },
-                        {
-                            "property": "Date de fin",
-                            "date": {
-                                "is_empty": True
-                            }
-                        },
-                    ],
+                    "property": "Date de fin",
+                    "date": {
+                        "on_or_before": date_end.strftime("%Y-%m-%d")
+                    }
                 },
                 {
                     "property": "Facturé",
@@ -84,20 +74,10 @@ def query_unbilled_entries(date_start: str, date_end: str, already_factured: boo
                         }
                     },
                     {
-                        "or": [
-                            {
-                                "property": "Date de fin",
-                                "date": {
-                                    "on_or_before": date_end.strftime("%Y-%m-%d")
-                                }
-                            },
-                            {
-                                "property": "Date de fin",
-                                "date": {
-                                    "is_empty": True
-                                }
-                            },
-                        ],
+                        "property": "Date de fin",
+                        "date": {
+                            "on_or_before": date_end.strftime("%Y-%m-%d")
+                        }
                     },
                 ]
             },
@@ -118,36 +98,32 @@ def query_unbilled_entries(date_start: str, date_end: str, already_factured: boo
     response.raise_for_status()
     return response.json()["results"]
 
-def create_invoice_page(client: str, interventions: list, total: str, invoice_number: str):
+def create_invoice_page(client: str, interventions: list, mois: str, invoice_number: str):
     """
     Create an invoice page in the Notion database for a given client with detailed interventions.
     :param client: Name of the client
     :param interventions: List of interventions
-    :param total: Total amount of the invoice
+    :param mois: Month for the invoice
     :param invoice_number:  number
     :return: Response from the Notion API
     """
-
-    children = []
+    total_amount = 0
+    if not interventions:
+        return 'No interventions provided for invoice creation'
     for item in interventions:
         if not item.get("properties"):
             return 'Invalid item format: missing properties'
         props = item["properties"]
-        row = f"{props['Cours']['title'][0]['plain_text']} : {props['Nombre heures']['number']}h × {props['Tarif horaire']['number']}€"
-        children.append({
-            "object": "block",
-            "type": "paragraph",
-            "paragraph": {
-                "rich_text": [{"type": "text", "text": {"content": row}}]
-            }
-        })
+        total_amount += props['Nombre heures']['number'] * props['Tarif horaire']['number']
+
+    children = generate_invoice_blocks(interventions, client, mois)
 
     payload = {
         "parent": {"database_id": INVOICESDB},
         "properties": {
             "Client": {"title": [{"text": {"content": client}}]},
             "Mois": {"rich_text": [{"text": {"content": datetime.datetime.now().strftime("%B %Y")}}]},
-            "Total Amount": {"number": float(total)},
+            "Total Amount": {"number": float(total_amount)},
             "Invoice Number": {"rich_text": [{"text": {"content": invoice_number}}]}
         },
         "children": children
@@ -157,3 +133,49 @@ def create_invoice_page(client: str, interventions: list, total: str, invoice_nu
     response.raise_for_status()
 
     return response.json()
+
+def generate_invoice_blocks(interventions: list, client: str, mois: str):
+    """Generate blocks for the invoice page from the list of interventions.
+    :param interventions: List of interventions
+    :param client: Name of the client
+    :param mois: Month for the invoice
+    :return: children blocks and total amount
+    """
+    children = [
+        {"object": "block", "type": "heading_1",
+         "heading_1": {"rich_text": [{"type": "text", "text": {"content": "FACTURE"}}]}},
+        {"object": "block", "type": "paragraph",
+         "paragraph": {"rich_text": [{"type": "text", "text": {"content": f"Client : {client}"}}]}},
+        {"object": "block", "type": "paragraph",
+         "paragraph": {"rich_text": [{"type": "text", "text": {"content": f"Mois : {mois}"}}]}},
+        {"object": "block", "type": "divider", "divider": {}},
+        {"object": "block", "type": "heading_2",
+         "heading_2": {"rich_text": [{"type": "text", "text": {"content": "Détail des interventions"}}]}},
+        {"object": "block", "type": "paragraph",
+         "paragraph": {"rich_text": [{"type": "text", "text": {"content": "Cours | Heures | Tarif | Total\n--- | --- | --- | ---"}}]}}
+    ]
+    total_amount = 0
+    for item in interventions:
+        if not item.get("properties"):
+            return 'Invalid item format: missing properties'
+        props = item["properties"]
+        row = f"{props['Cours']['title'][0]['plain_text']} | {props['Nombre heures']['number']}h | {props['Tarif horaire']['number']}€ | {props['Nombre heures']['number'] * props['Tarif horaire']['number']}€"
+        children.append({
+            "object": "block",
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [{"type": "text", "text": {"content": row}}]
+            }
+        })
+        total_amount += props['Nombre heures']['number'] * props['Tarif horaire']['number']
+
+    children.append({
+        "object": "block",
+        "type": "callout",
+        "callout": {
+            "icon": {"type": "emoji", "emoji": "💰"},
+            "rich_text": [{"type": "text", "text": {"content": f"Total à payer : {total_amount} €"}}]
+        }
+    })
+
+    return children
